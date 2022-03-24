@@ -9,7 +9,9 @@ Oxygen only depends on Nitrogen for core functionality and it must be installed 
 running the program automaticly creates a slideshow from the desired folder of choice
 
 example:
-``` Oxygen /<IMAGE_FOLDER> <TIMEOUT>
+``` 
+Oxygen /<IMAGE_FOLDER> <TIMEOUT>
+```
 
 replace <IMAGE_FOLDER> with the folder that contains the desired images
 replace <TIMEOUT> with the time it between background switches in seconds
