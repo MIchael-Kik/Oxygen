@@ -19,13 +19,15 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    const std::string HOME = getenv("HOME");
-    const std::string prefix = "nitrogen --set-zoom-fill --random ";
-    const std::string command = argv[1];
-    const std::string suffix = " --save";
+    const std::string* command = new std::string(argv[1]);
+    const std::string* usrPath = new std::string(getenv("HOME"));
 
     const std::string timeout = argv[2];
-    const std::string fullcommand = prefix + HOME +  command + suffix;
+    const std::string fullcommand = "nitrogen --set-zoom-fill --random " + (*usrPath) + (*command) + " --save";
+
+    delete command;
+    delete usrPath;
+
     while (dpy) {
         system(fullcommand.c_str());
 
@@ -34,7 +36,5 @@ int main(int argc, char** argv)
         dpy = XOpenDisplay(NULL);
     }
 
-    int exitValue = XCloseDisplay(dpy);
-
-    return exitValue;
+    return  XCloseDisplay(dpy);
 }
