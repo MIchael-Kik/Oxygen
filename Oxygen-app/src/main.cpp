@@ -36,5 +36,5 @@ int main(int argc, char** argv)
         dpy = XOpenDisplay(NULL);
     }
 
-    return  XCloseDisplay(dpy);
+    return XCloseDisplay(dpy);
 }
